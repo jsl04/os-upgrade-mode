@@ -1,0 +1,27 @@
+<config-template xmlns="http://tail-f.com/ns/config/1.0"
+                 servicepoint="os-upgrade-mode">
+  <devices xmlns="http://tail-f.com/ns/ncs">
+    <device>
+      <!--
+          Select the devices from some data structure in the service
+          model. In this skeleton the devices are specified in a leaf-list.
+          Select all devices in that leaf-list:
+      -->
+      <name>{/device}</name>
+      <config>
+                        <router xmlns="http://tail-f.com/ned/cisco-ios-xr">
+                     <isis>
+                       <tag>
+                         <name>lab</name>
+                         <set-overload-bit-level>
+                           <set-overload-bit>
+                             <level>2</level>
+                           </set-overload-bit>
+                         </set-overload-bit-level>
+                       </tag>
+                     </isis>
+                   </router>
+      </config>
+    </device>
+  </devices>
+</config-template>
